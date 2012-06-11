@@ -2,20 +2,18 @@
    OKFN-CAROUSEL
    =============
    A custom carousel script for the Open Knowledge Foundation.
-   Requires jQuery.
-   Loosely based upon the jquery flickr gallery plugin
-	   (developed by J.P. Given (http://johnpatrickgiven.com))
+   Requires jQuery and spin.js.
 
    USAGE
    =====
-   Just create a couple of elements on your page: An 'okfn-carousel' div for the carousel to 
-   live in, and an 'okfn-carousel-data' table full of the data for the carousel to use.
+   Just create a couple of elements on your page: A 'zcarousel' div for the carousel to 
+   live in, and a 'zcarousel-data' table full of the data for the carousel to use.
    There is no need to insert Javascript into the page.
 
    EXAMPLE
    ======
-  <div id="okfn-carousel" style="width: 500px; height: 200px;"></div>
-  <table id="okfn-carousel-data" style="display: none;">
+  <div id="zcarousel" style="width: 500px; height: 200px;"></div>
+  <table id="zcarousel-data" style="display: none;">
     <tr>
       <td>http://farm7.staticflickr.com/6102/6262968724_9c5b2be4b6_b_d.jpg</td>
       <td>-50px</td>
@@ -48,8 +46,8 @@ $(function() {
   };
 
   // Detect the required page elements.
-  var data = $('#okfn-carousel-data');
-  var carousel = $('#okfn-carousel');
+  var data = $('#zcarousel-data');
+  var carousel = $('#zcarousel');
   if (data.length==0 || carousel.length==0) {
     // There is no carousel on this page.
     return;
