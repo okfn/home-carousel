@@ -41,12 +41,9 @@ var flickrhelpers = null;
 				$.getJSON("http://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&photoset_id=" + settings.flickrSet + "&api_key=" + settings.flickrKey + "&jsoncallback=?", function(flickrData){
 				
 					var length = flickrData.photoset.photo.length;
-					var thumbHTML = '';
 
 					for (i=0; i<length; i++) {
-						var photoURL = 'http://farm' + flickrData.photoset.photo[i].farm + '.' + 'static.flickr.com/' + flickrData.photoset.photo[i].server + '/' + flickrData.photoset.photo[i].id + '_' + flickrData.photoset.photo[i].secret +'.jpg'
-						var thumbURL = 'http://farm' + flickrData.photoset.photo[i].farm + '.' + 'static.flickr.com/' + flickrData.photoset.photo[i].server + '/' + flickrData.photoset.photo[i].id + '_' + flickrData.photoset.photo[i].secret + '_s.jpg'
-						thumbHTML += '<img src=' + thumbURL + ' width="50" height="50" onclick="flickrhelpers.navImg('+ i +');flickrhelpers.toggleUp();" style="cursor: pointer;">';
+						var photoURL = 'http://farm' + flickrData.photoset.photo[i].farm + '.' + 'static.flickr.com/' + flickrData.photoset.photo[i].server + '/' + flickrData.photoset.photo[i].id + '_' + flickrData.photoset.photo[i].secret +'_b.jpg'
 						settings.imgArray[i] = photoURL;
 						settings.titleArray[i] = flickrData.photoset.photo[i].title;
 					}
@@ -81,17 +78,6 @@ var flickrhelpers = null;
 						"left" : settings.x,
 						"top"  : settings.y
 					});
-					
-					// Append the Thumbs holder to the body
-					$("body").append('<div id="flickr_thumbs"></div>');
-					$("#flickr_thumbs").css("background-color",element.css("background-color"));
-					$("#flickr_thumbs").css("width",element.width());
-					$("#flickr_thumbs").css("left",settings.x);
-					$("#flickr_thumbs").css("top",settings.y);
-
-					$("#flickr_thumbs").html(thumbHTML);
-
-					$("#flickr_thumbs").slideUp("slow");
 					
 					// When data is set, load first image.
 					flickrhelpers.navImg(0);
@@ -132,21 +118,16 @@ var flickrhelpers = null;
 					// Set the aspect ratio
 					var w = $("#thsImage").width();
 					var h = $("#thsImage").height();
-					if (w > h) {
-						var fRatio = w/h;
-						$("#thsImage").css("width",element.width());
-						$("#thsImage").css("height",Math.round(element.width() * (1/fRatio)));
-					} else {
-						var fRatio = h/w;
-						$("#thsImage").css("height",element.height());
-						$("#thsImage").css("width",Math.round(element.height() * (1/fRatio)));
-					}
 
-					if (element.outerHeight() > $("#thsImage").outerHeight()) {
-						var thisHalfImage = $("#thsImage").outerHeight()/2;
-						var thisTopOffset = (element.outerHeight()/2) - thisHalfImage;
-						$("#thsImage").css("margin-top",thisTopOffset+"px");
-					}
+                    // Resize the image to fit in width
+                    var fRatio = w/h;
+                    $("#thsImage").css("width",element.width());
+                    $("#thsImage").css("height",Math.round(element.width() * (1/fRatio)));
+
+                    // Vertically center the image
+                    var thisHalfImage = $("#thsImage").outerHeight()/2;
+                    var thisTopOffset = (element.outerHeight()/2) - thisHalfImage;
+                    $("#thsImage").css("margin-top",thisTopOffset+"px");
 					
 					var current_count = currentIndex + 1;
 					$("#flickr_count").html("Photo " + current_count + " of " + settings.imgArray.length);

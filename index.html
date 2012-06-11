@@ -32,30 +32,75 @@
 	</style>
 	
 	<!-- link to plug-in style sheet -->
-	<link rel="stylesheet" href="js/jquery-flickr-gallery/jquery-flickr.css" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="bootstrap.min.css" type="text/css" charset="utf-8">
 	
 	<!-- Google hosted jQuery core -->
 	<script src="http://www.google.com/jsapi"></script>
 	<script>google.load("jquery", "1");</script>
 	
-	<!-- Link to js file from plug-in -->
-	<script src="js/jquery-flickr-gallery/jquery-flickr-gallery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="okfn-carousel.js"></script>
+	<script src="spin.min.js"></script>
 	
-	<!-- JS call to set up gallery -->
-	<script>
-		// Replace the setID below with your setID
-		// Get your flickrAPI here: http://www.flickr.com/services/api/misc.api_keys.html
-		$(document).ready(function() {
-		    $('#flickr_div').flickrGallery({
-				"flickrSet" : "72157628526365793",
-				"flickrKey" : "2c5880b8afca129be15a360ac97615cd"
-			});
-		});
-	</script>
 </head>
 <body>
-	<div id="flickr_div"></div>
-	<!-- "flickr_count" Required if you want count and titles - Styled above. -->
-	<div id="flickr_count"></div>
+  <div id="test"></div>
+  <div id="okfn-carousel" style="width: 940px; height: 250px;"></div>
+  <table id="okfn-carousel-data" style="display:none;">
+    <tr>
+      <td>http://farm7.staticflickr.com/6102/6262968724_9c5b2be4b6_b_d.jpg</td>
+      <td>0</td>
+      <td>Our events unite people from a variety of backgrounds. This October, 400 members of over 40 nations gathered in Warsaw for Open Government Data Camp.</td>
+    </tr>
+    <tr>
+      <td>http://farm8.staticflickr.com/7004/6554801395_476cf878b7_o_d.png</td>
+      <td>0</td>
+      <td>[ Nice DDJ notice board shot, trimmed to size ]</td>
+    </tr>
+    <tr>
+      <td>http://farm7.staticflickr.com/6042/6260211557_4a14a679f7_b_d.jpg</td>
+      <td>0</td>
+      <td>[ Guys with beanbags ]</td>
+    </tr>
+    <tr>
+      <td>http://farm7.staticflickr.com/6038/6270105106_f53eb3061a_b_d.jpg</td>
+      <td>0</td>
+      <td>[ JonGray pinning something to an OGDCamp wall ]</td>
+    </tr>
+    <tr>
+      <td>http://farm7.staticflickr.com/6220/6270070884_2df99aeae4_b_d.jpg</td>
+      <td>0</td>
+      <td>[ Stallman is photogenic ]</td>
+    </tr>
+    <tr>
+      <td>http://farm7.staticflickr.com/6013/5900133671_1a08186168_b_d.jpg</td>
+      <td>0</td>
+      <td>[ OKCon 2011 image ]</td>
+    </tr>
+    <tr>
+      <td>http://farm7.staticflickr.com/6034/5900702180_0210be9dae_b_d.jpg</td>
+      <td>0</td>
+      <td>[ some guy holding a microphone ]</td>
+    </tr>
+    <tr>
+      <td>http://farm8.staticflickr.com/7172/6555432267_61dfa47f24_b_d.jpg</td>
+      <td>0</td>
+      <td>Our projects enrich openness and access. The Public Domain Review showcases works as they enter the public domain, such as this map from Geographicus.</td>
+    </tr>
+    <tr>
+      <td>http://farm8.staticflickr.com/7002/6555431943_30902060ea_b_d.jpg</td>
+      <td>0</td>
+      <td>Our tools help people work with data. CKAN is an open source data portal that powers sites such as data.gov.uk.</td>
+    </tr>
+    <tr>
+      <td>http://farm8.staticflickr.com/7023/6555432115_81e63c7a42_b_d.jpg</td>
+      <td>0</td>
+      <td>Our online and offline communities engage people around the world. This November in Helsinki, a group of locals organised the first open knowledge meetup in Finland.</td>
+    </tr>
+    <tr>
+      <td>http://farm8.staticflickr.com/7161/6555432419_44c44a1228_b_d.jpg</td>
+      <td>0</td>
+      <td>[ Rufus waving up at the camera ]</td>
+    </tr>
+  </table>
 </body>
 </html>
