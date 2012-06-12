@@ -12,9 +12,24 @@
 	
 	<script src="spin.min.js"></script>
 	<script src="jquery.zcarousel.min.js"></script>
+    <style type="text/css">
+      body {
+        font-family: Helvetica Neue, Helvetica; 
+        font-size: 13px;
+      }
+      pre {
+          background: #f0f0f0;
+          border: 1px solid #ccc;
+          padding: 8px;
+          margin-bottom: 10px;
+          display: inline-block;
+          zoom: 1;
+          *display: inline;
+      }
+    </style>
 	
 </head>
-<body style="font-family: Helvetica Neue, Helvetica; font-size: 13px;">
+<body>
   <h3>zcarousel demo</h3>
   <div id="zcarousel" style="width: 940px; height: 250px; "></div>
   <table id="zcarousel-data" style="display:none;">
@@ -64,5 +79,37 @@
       <td>[ Group photo from OGDCamp ]</td>
     </tr>
   </table>
+
+  <h3>Usage: Javascript</h3>
+  <pre>
+$('#carousel-div').zcarousel(
+[
+  { caption: 'Here is the first image.',         
+    url: 'http://somewhere.com/image1.jpg', 
+    offset: '10px' 
+  },
+  { caption: 'Second image now appearing here.', 
+    url: 'http://somewhere.com/image2.jpg', 
+    offset: '0'    
+  }
+] );
+</pre>
+
+  <h3>Usage: Pure HTML</h3>
+  <pre>
+&lt;div id="zcarousel" style="width: 500px; height: 200px;"&gt;&lt;/div&gt;
+&lt;table id="zcarousel-data" style="display: none;"&gt;
+ &lt;tr&gt;
+   &lt;td&gt;http://farm7.staticflickr.com/6102/6262968724_9c5b2be4b6_b_d.jpg&lt;/td&gt;
+   &lt;td&gt;-50px&lt;/td&gt;
+   &lt;td&gt;Here is my caption for the first image, which was shifted up the page by 50 pixels.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td&gt;http://farm8.staticflickr.com/7004/6554801395_476cf878b7_o_d.png&lt;/td&gt;
+   &lt;td&gt;0&lt;/td&gt;
+   &lt;td&gt;Here is another interesting caption.&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
 </body>
 </html>
